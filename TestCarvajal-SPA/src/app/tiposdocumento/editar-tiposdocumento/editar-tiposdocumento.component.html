@@ -1,0 +1,15 @@
+<div class="container">   
+    <div class="form-group row">
+        <div class="col-sm-6">
+            <label for="Nombres">Nombre</label>
+            <input type="text" class="form-control" id="Nombres" [(ngModel)]="tipoDocumentoSeleccionado.nombre">
+        </div>
+        <div class="col-sm-6">
+            <label for="Apellidos">Descripción</label>
+            <input type="text" class="form-control" id="Apellidos" [(ngModel)]="tipoDocumentoSeleccionado.descripcion">
+        </div>
+    </div>   
+    <br>        
+    <button type="Cancelar" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    <button type="Guardar" class="btn btn-primary" (click)="guardar()">Guardar</button>         
+</div>

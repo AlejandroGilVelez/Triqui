@@ -1,0 +1,115 @@
+<h1 class="text-center">Gestión Tipos de Documentos de Identidad</h1>
+<!-- <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th> 
+      <th scope="col">Nombres</th>
+      <th scope="col">Descripción</th>            
+      <th scope="col">
+        <input type="button" class="btn btn-link" value="Nuevo" (click)="agregarTiposDocumentos()"/>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of registrosTiposIdentificacion; index as i">
+      <td scope="row">{{ i + 1 }}</td>     
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.descripcion }}</td>      
+      <td>
+        <input type="button" class="btn btn-secondary m2" value="Editar" (click)="editar(item)"/>
+        <input type="button" class="btn btn-danger m2" value="Eliminar"  (click)="eliminar(item)"/>
+      </td>
+    </tr>
+  </tbody>
+</table> -->
+
+<p-table
+  [value]="registrosTiposIdentificacion"
+  [paginator]="true"
+  [rows]="10"
+  [showCurrentPageReport]="true"
+  currentPageReportTemplate="Mostrando {first} hasta {last} de {totalRecords} registros"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <th>#</th>
+      <th>Nombres</th>
+      <th pSortableColumn="descripcion">
+        Descripción
+        <p-sortIcon
+          field="descripcion"
+          ariaLabel="Activate to sort"
+          ariaLabelDesc="Activate to sort in descending order"
+          ariaLabelAsc="Activate to sort in ascending order"
+        ></p-sortIcon>
+      </th>
+      <th>
+        <input
+          type="button"
+          class="btn btn-link"
+          value="Nuevo"
+          (click)="agregarTiposDocumentos()"
+        />
+      </th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+    <tr>
+      <td>{{ rowIndex + 1 }}</td>
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.descripcion }}</td>
+      <td>
+        <input
+          type="button"
+          class="btn btn-secondary m2"
+          value="Editar"
+          (click)="editar(item)"
+        />
+        <input
+          type="button"
+          class="btn btn-danger m2"
+          value="Eliminar"
+          (click)="eliminar(item)"
+        />
+      </td>
+    </tr>
+  </ng-template>
+  <!-- <ng-template pTemplate="summary">
+    Existen {{registrosTiposIdentificacion?.length}} Tipos de documentos
+</ng-template> -->
+</p-table>
+<p-toast
+  position="center"
+  key="c"
+  (onClose)="onReject()"
+  [modal]="true"
+  [baseZIndex]="5000"
+>
+  <ng-template let-message pTemplate="message">
+    <div style="text-align: center;">
+      <i class="pi pi-exclamation-triangle" style="font-size: 3em;"></i>
+      <h3>{{ message.summary }}</h3>
+      <p>{{ message.detail }}</p>
+    </div>
+    <div class="ui-g ui-fluid">
+      <div class="ui-g-6">
+        <button
+          type="button"
+          pButton
+          (click)="onConfirm()"
+          label="Si"
+          class="ui-button-success"
+        ></button>
+      </div>
+      <div class="ui-g-6">
+        <button
+          type="button"
+          pButton
+          (click)="onReject()"
+          label="No"
+          class="ui-button-secondary"
+        ></button>
+      </div>
+    </div>
+  </ng-template>
+</p-toast>

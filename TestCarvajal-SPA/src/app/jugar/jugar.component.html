@@ -1,0 +1,35 @@
+<div class="contenedor">
+  <div class="ui-g contenedor">
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('a1')">{{objJugar.a1 == 0? "_" :(objJugar.a1 == 1? "X" : "O")}}</button>
+    </div>
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('a2')">{{objJugar.a2 == 0? "_" :(objJugar.a2 == 1? "X" : "O")}}</button>
+    </div>
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('a3')">{{objJugar.a3 == 0? "_" :(objJugar.a3 == 1? "X" : "O")}}</button>
+    </div>
+  </div>
+  <div class="ui-g contenedor">
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('b1')" >{{objJugar.b1 == 0? "_" :(objJugar.b1 == 1? "X" : "O")}}</button>
+    </div>
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('b2')">{{objJugar.b2 == 0? "_" :(objJugar.b2 == 1? "X" : "O")}}</button>
+    </div>
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('b3')">{{objJugar.b3 == 0? "_" :(objJugar.b3 == 1? "X" : "O")}}</button>
+    </div>
+  </div>
+  <div class="ui-g contenedor">
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('c1')">{{objJugar.c1 == 0? "_" :(objJugar.c1 == 1? "X" : "O")}}</button>
+    </div>
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('c2')">{{objJugar.c2 == 0? "_" :(objJugar.c2 == 1? "X" : "O")}}</button>
+    </div>
+    <div class="ui-g-4 triqui-cell">
+        <button (click)="jugar('c3')">{{objJugar.c3 == 0? "_" :(objJugar.c3 == 1? "X" : "O")}}</button>
+    </div>
+  </div>
+</div>
